@@ -1,0 +1,33 @@
+.title-img-box {
+    width: 7.5rem;
+    height: .43rem;
+    margin: 3rem auto .2rem;
+    text-align: center;
+
+    img {
+        width: 5rem;
+    }
+}
+
+.title {
+    width: 7.5rem;
+    margin: 0 auto .4rem;
+    text-align: center;
+    font-weight: 100;
+    font-family: 'Whitney A', sans-serif;
+    font-size: .4rem;
+    color: $gray;
+}
+
+.link {
+    text-align: center;
+
+    a {
+        color: $blue;
+        padding: 0 .2rem;
+
+        &:hover {
+            text-decoration-line: underline;
+        }
+    }
+}

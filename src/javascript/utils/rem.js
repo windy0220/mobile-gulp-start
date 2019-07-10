@@ -1,10 +1,11 @@
-;(function (designWidth, maxWidth) {
+;
+(function (designWidth, maxWidth) {
   "use strict";
   var doc = document,
-      win = window,
-      docEl = doc.documentElement,
-      remStyle = document.createElement("style"),
-      tid;
+    win = window,
+    docEl = doc.documentElement,
+    remStyle = document.createElement("style"),
+    tid;
 
   function refreshRem() {
     var width = docEl.getBoundingClientRect().width;
@@ -15,7 +16,7 @@
     //加上下面这段，即便是设置了字体，页面也不会错乱
     var actualSize = parseFloat(window.getComputedStyle(docEl)["font-size"]);
     if (actualSize !== rem) {
-      var remScaled = rem / ( actualSize / rem );
+      var remScaled = rem / (actualSize / rem);
       remStyle.innerHTML = 'html{font-size:' + remScaled + 'px;}';
     }
   }
@@ -32,8 +33,8 @@
   refreshRem();
 
   win.addEventListener("resize", function () {
-    // clearTimeout(tid); //防止执行两次
-    // tid = setTimeout(refreshRem, 300);
+    clearTimeout(tid); //防止执行两次
+    tid = setTimeout(refreshRem, 300);
   }, false);
 
   win.addEventListener("pageshow", function (e) {
@@ -51,4 +52,3 @@
     }, false);
   }
 })(750, 640);
-

@@ -33,7 +33,7 @@ gulp.task('pageScripts',async () => {
         .pipe(sourcemaps.init())
         .pipe(uglify())               //压缩js文件
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('dist/page/'))   //把操作好的文件放到dist/js目录下
+        .pipe(gulp.dest('dist/js/'))   //把操作好的文件放到dist/js目录下
 });
 
 //操作css文件
@@ -57,7 +57,7 @@ gulp.task("pageStyle", async () => {
         .pipe(sass({outputStyle: 'compact'}).on('error', sass.logError)) // compressed
         .pipe(sourcemaps.write('.'))
         // .pipe(cssnano())
-        .pipe(gulp.dest('dist/css/page'))
+        .pipe(gulp.dest('dist/css/'))
 });
 
 //监控文件变化，自动更新
