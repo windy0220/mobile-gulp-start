@@ -32,7 +32,6 @@ const webpack = require('webpack-stream');
 const named = require('vinyl-named');
 gulp.task('pageScripts', async () => {
     await gulp.src('src/javascript/page/*')
-<<<<<<< HEAD
         .pipe(named())
         .pipe(webpack(
             {
@@ -45,12 +44,6 @@ gulp.task('pageScripts', async () => {
         // .pipe(uglify())               //压缩js文件
         // .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('dist/page/'))   //把操作好的文件放到dist/js目录下
-=======
-        .pipe(sourcemaps.init())
-        .pipe(uglify())               //压缩js文件
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('dist/js/'))   //把操作好的文件放到dist/js目录下
->>>>>>> 4c69c90b692cf8ef2a1c49fbbb3c8fe731c64b2c
 });
 
 //操作css文件
