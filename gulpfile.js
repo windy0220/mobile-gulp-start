@@ -35,9 +35,27 @@ gulp.task('pageScripts', async () => {
         .pipe(named())
         .pipe(webpack(
             {
-                mode: "development", //"production" | "development" | "none"
+                mode: "production", //"production" | "development" | "none"
                 // watch: true,
-                devtool: 'source-map'
+                devtool: 'source-map',
+                module: {
+                    rules: [
+                        {
+                            test: /\.js?$/,
+                            use: [
+                                {
+                                    loader: 'babel-loader',
+                                    options: {
+                                        presets: ['@babel/preset-env'],
+                                        "plugins": ['@babel/transform-runtime']
+                                    }
+                                }
+                            ],
+                            // include: path.resolve(__dirname, 'src'),
+                            exclude: /node_modules/
+                        },
+                    ]
+                }
             }
         ))
         // .pipe(sourcemaps.init())
