@@ -21,6 +21,11 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
-    "gulp-watch": "^5.0.1"
+    "gulp-watch": "^5.0.1",
+    "webpack-stream": "^5.2.1",
+    "vinyl-named": "^1.1.0"
+  },
+  "dependencies": {
+    "js-cookie": "^2.2.1"
   }
 }
